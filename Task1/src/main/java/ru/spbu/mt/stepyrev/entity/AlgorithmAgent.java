@@ -4,10 +4,12 @@ import jade.core.AID;
 import jade.core.Agent;
 import jade.lang.acl.ACLMessage;
 import lombok.Data;
+import ru.spbu.mt.stepyrev.behaviour.AgentBehaviour;
 import ru.spbu.mt.stepyrev.exception.InvalidArgumentException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /** A class that realizes an agent used in the algorithm. */
 @Data
@@ -21,6 +23,10 @@ public class AlgorithmAgent extends Agent {
     /** A field that stores the central agent aid of the algorithm. */
     private AID centralAgentAid;
 
+    // This field is for simple agent
+    /** A field that shows if the agent send his message to the central one. */
+    private boolean isSend = false;
+
     // These fields are for central agent
     /** A field that stores all received numbers. */
     private List<Double> receivedNumbers = new ArrayList<>();
@@ -29,8 +35,6 @@ public class AlgorithmAgent extends Agent {
     /** A field that stores the result. */
     private Double result = null;
 
-    /** A field that shows if the agent send his message to the central one. */
-    private boolean isSend = false;
     /** A field that contains a number of the algorithm agent fields. */
     private final int AGENT_FIELD_NUMBER = 4;
     private final String INVALID_ARGUMENT_MESSAGE = "Invalid arguments found while setup an agent";
@@ -64,6 +68,7 @@ public class AlgorithmAgent extends Agent {
             throw new InvalidArgumentException(INVALID_ARGUMENT_MESSAGE);
         }
 
+        addBehaviour(new AgentBehaviour(this, TimeUnit.SECONDS.toMillis(1)));
         System.out.println(String.format("Agent #%s with number = %f is created", getAID().getLocalName(), number));
     }
 
@@ -106,7 +111,6 @@ public class AlgorithmAgent extends Agent {
                     .stream()
                     .reduce(0d, Double::sum);
             result = numbersSum / receivedNumberQuantity;
-            System.out.println(String.format("Result is counted, the average number of all elements = %f", result));
         }
     }
 
