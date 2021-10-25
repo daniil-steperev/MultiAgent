@@ -62,8 +62,10 @@ public class AlgorithmAgent extends Agent {
             this.number = Double.parseDouble((String) arguments[1]);
             this.agentsNumber = Integer.parseInt((String) arguments[2]);
 
-            String centralAid = (String) arguments[3];
-            this.centralAgentAid = new AID(centralAid, AID.ISLOCALNAME);
+            if (!isCentral) {
+                String centralAid = (String) arguments[3];
+                this.centralAgentAid = new AID(centralAid, AID.ISLOCALNAME);
+            }
         } catch (Exception e) {
             throw new InvalidArgumentException(INVALID_ARGUMENT_MESSAGE);
         }
