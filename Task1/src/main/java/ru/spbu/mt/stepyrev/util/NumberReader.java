@@ -6,7 +6,7 @@ import java.util.List;
 
 /** A class that realizes a number reader. */
 public class NumberReader {
-    private final static String INIT_FILE_NAME = "D:\\pico\\MT\\Task1\\src\\main\\resources\\initfile.txt";
+    private final static String INIT_FILE_NAME = "src/main/resources/initfile.txt";
 
     /**
      * A method that reads parameters from init file.

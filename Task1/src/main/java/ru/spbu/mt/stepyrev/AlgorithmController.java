@@ -38,7 +38,7 @@ public class AlgorithmController {
                 agentController.start();
             }
         } catch (StaleProxyException e) {
-            // FIXME: add check here
+            e.printStackTrace();
         }
     }
 
