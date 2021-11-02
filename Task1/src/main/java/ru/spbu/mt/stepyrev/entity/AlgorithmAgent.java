@@ -39,11 +39,6 @@ public class AlgorithmAgent extends Agent {
     private final int AGENT_FIELD_NUMBER = 4;
     private final String INVALID_ARGUMENT_MESSAGE = "Invalid arguments found while setup an agent";
 
-    public AlgorithmAgent(boolean isCentral, double number) {
-        this.isCentral = isCentral;
-        this.number = number;
-    }
-
     /**
      * A method that realises creating an agent.
      *
@@ -58,12 +53,12 @@ public class AlgorithmAgent extends Agent {
         }
 
         try {
-            this.isCentral = Boolean.parseBoolean((String) arguments[0]);
-            this.number = Double.parseDouble((String) arguments[1]);
-            this.agentsNumber = Integer.parseInt((String) arguments[2]);
+            this.isCentral = Boolean.parseBoolean(String.valueOf(arguments[0]));
+            this.number = Double.parseDouble(String.valueOf(arguments[1]));
+            this.agentsNumber = Integer.parseInt(String.valueOf(arguments[2]));
 
             if (!isCentral) {
-                String centralAid = (String) arguments[3];
+                String centralAid = String.valueOf(arguments[3]);
                 this.centralAgentAid = new AID(centralAid, AID.ISLOCALNAME);
             }
         } catch (Exception e) {
