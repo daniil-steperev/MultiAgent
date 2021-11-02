@@ -12,9 +12,9 @@ import java.util.List;
 /** A class that realizes a controller of the algorithm. */
 public class AlgorithmController {
     private static final String HOST = "localhost";
-    private static final String PORT = "9090";
+    private static final String PORT = "10098";
     private static final String GUI = "true";
-    private static final String AGENT_PACKAGE_NAME = "ru.spbu.mt.stepyrev.entity";
+    private static final String AGENT_PACKAGE_NAME = "ru.spbu.mt.stepyrev.entity.AlgorithmAgent";
     private static final String CENTRAL_NICKNAME = "Central";
 
     private ContainerController containerController;
