@@ -10,7 +10,7 @@
 3. задержки отправки данных -- сообщение с некоторым шансом приходит с задержкой, то есть когда число у отправителя уже изменилось
 
 # Описание классов в программе:
-- ###Application
+- ### Application
 
   Класс, в котором происходит запуск программы. Содержит в себе метод генерации значений агентов и их печать.
 
@@ -34,12 +34,12 @@
 
 # Результат выполнения алгоритма
 Значения агентов в программе генерируются случайным образом в заданном диапазоне. После генерации выводится сообщение:
-![Alt text](src/main/resources/generated.png?raw=true "Title")
+![Alt text](src/main/resources/generated.PNG?raw=true "Title")
 
 Во время работы алгоритма агенты обновляют свои значения. При этом выводится следующее сообщение:
-![Alt text](src/main/resources/update_value.png?raw=true "Title")
+![Alt text](src/main/resources/update_value.PNG?raw=true "Title")
 
 После окончания работы алгоритма выводится результат:
 
-![Alt text](src/main/resources/result.png?raw=true "Title")
+![Alt text](src/main/resources/result.PNG?raw=true "Title")
 
